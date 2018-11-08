@@ -14,12 +14,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.http import HttpResponse
-
-
-def home(request):
-    return HttpResponse(status=200)
-
+from apps.website.views import home
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
