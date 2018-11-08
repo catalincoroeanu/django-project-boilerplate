@@ -1,0 +1,31 @@
+version: '3.2'
+
+volumes:
+#  mysql_data_dev: {}
+  project_db_data: {}
+  project_redis_data: {}
+
+services:
+  postgres:
+    container_name: postgres
+    build: ./devops/docker/postgres
+    restart: always
+    volumes:
+      - project_db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: db_user
+      POSTGRES_DB: db
+      POSTGRES_PASSWORD: secret
+    ports:
+      - 5432:5432
+    command: -c fsync=off -c synchronous_commit=off -c full_page_writes=off
+
+  redis:
+    container_name: redis
+    restart: always
+    build:
+      context: ./devops/docker/redis/
+    volumes:
+      - project_redis_data:/data
+    ports:
+      - 6379:6379

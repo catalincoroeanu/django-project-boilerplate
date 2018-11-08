@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==1.8.*"
+pillow = "==5.3.0"
+celery = "==4.0"
+django-celery = "==2.5.3"
+django-celery-beat = "==1.1.0"
+django-redis = "==4.8.0"
+"beautifulsoup4" = "==4.6.0"
+requests = "==2.19.1"
+django-vinaigrette = "==1.1.1"
+"psycopg2" = "==2.7.3.2"
+django-environ = "==0.4.5"
+django-extensions = "==1.9.7"
+django-admin-generator = "==2.0.0"
+django-import-export = "==0.5.1"
+django-dynamic-fixture = "==1.9.5"
+pytest = "==3.10.0"
+coverage = "==4.5.*"
+pytest-cov = "==2.6.0"
+pytest-django = "==3.4.3"
+mixer = "==6.1.3"
+
+[dev-packages]
+
+
+[requires]
+python_version = "2.7"
