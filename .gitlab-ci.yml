@@ -35,3 +35,5 @@ test:
     DATABASE_URL: "postgresql://postgres:secret@postgres:5432/$POSTGRES_DB"
   script:
     - pytest
+  coverage: '\d+\%\s+$'
+
