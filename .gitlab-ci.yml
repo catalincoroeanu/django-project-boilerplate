@@ -30,9 +30,12 @@ before_script:
   - pip install -U pipenv
   - pipenv install --system --deploy
 
-test:
+Test:
   variables:
     DATABASE_URL: "postgresql://postgres:secret@postgres:5432/$POSTGRES_DB"
   script:
     - pytest
+
+Coverage:
+  script: rspec
   coverage: '/\d+\.\d+%$/'
