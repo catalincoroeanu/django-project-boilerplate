@@ -22,7 +22,7 @@ SITE_ROOT = root()
 
 BASE_DIR = SITE_ROOT
 
-DEBUG = env('DEBUG') # False if not in os.environ
+DEBUG = env.bool('DEBUG', default=True) # False if not in os.environ
 
 ENV = env.str('ENV', default='stage')
 # Quick-start development settings - unsuitable for production
